@@ -14,6 +14,19 @@
 4. Rename the script to **epyi_simplefaction** if not already done (IMPORTANT)
 4. Start the resource folder by using **ensure epyi_simplefaction** in your server.cfg
 5. **OPTIONNAL →** Configure the script by editing the **config.lua** file
+## ❓How to use it
+    Please note, this script is not natively compatible with all existing doublejob resources.
+
+    To obtain information about a player's faction, you must use the following exports:
+
+    Server side:
+    exports["epyi_simplefaction"]:getFaction(source)
+
+    Client side:
+    exports["epyi_simplefaction"]:getFaction()
+
+    To define a player's faction, this can only be done on the server side using the following export:
+    exports["epyi_simplefaction"]:setFaction(source, faction, rank, callback)
 ## 📜 License
     Copyright (C) 2023 Epyi's Scripts
 
