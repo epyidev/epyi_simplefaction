@@ -1,7 +1,7 @@
 fx_version("cerulean")
 game("gta5")
 
-description("Simple job2 system for ESX")
+description("Simple faction system for ESX")
 author("Epyi")
 version("1.0.0")
 lua54("yes")

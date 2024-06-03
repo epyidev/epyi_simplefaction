@@ -3,7 +3,7 @@ ESX.RegisterCommand(
 	Config.admins,
 	function(xPlayer, args, _)
 		setFaction(args.player.source, args.faction, args.rank, function(success)
-			xPlayer.showNotification(success and _U("notif_setfaction_success", GetPlayerName(args.player.source), args.job, args.rank) or _U("notif_setfaction_error", GetPlayerName(args.player.source)))
+			xPlayer.showNotification(success and _U("notif_setfaction_success", GetPlayerName(args.player.source), args.faction, args.rank) or _U("notif_setfaction_error", GetPlayerName(args.player.source)))
 		end)
 	end,
 	true,
