@@ -1,30 +1,30 @@
 Config = {}
-Config.locale = "fr"
+Config.locale = "en"
 
 Config.admins = { "admin" }
 Config.defaultFaction = {
 	name = "unemployed2",
 	rank = 0,
-	label = "Sans faction",
-	grade_label = "Sans faction",
+	label = "No faction",
+	grade_label = "No faction",
 }
 
 Config.factions = {
 	["ballas"] = {
 		label = "Ballas",
 		ranks = {
-			[0] = "Novice",
+			[0] = "Recruit",
 			[1] = "Ballas",
 			[2] = "OG",
 		},
 	},
-	["exemple"] = {
-		label = "Exemple",
+	["example"] = {
+		label = "Example",
 		ranks = {
-			[0] = "Recrue",
-			[1] = "Membre",
-			[2] = "Confirmé",
-			[3] = "Chef",
+			[0] = "Recruit",
+			[1] = "Member",
+			[2] = "Officer",
+			[3] = "Leader",
 		},
 	},
 }
