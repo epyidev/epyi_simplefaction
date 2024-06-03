@@ -8,13 +8,13 @@ end
 
 ---doesFactionExist
 ---@param faction string
----@param rank number
+---@param grade number
 ---@return boolean
 ---@public
-function doesFactionExist(faction, rank)
+function doesFactionExist(faction, grade)
 	local isValid = false
 	for _faction, datas in pairs(Config.factions) do
-		if _faction == faction and datas.ranks[rank] then
+		if _faction == faction and datas.grades[grade] then
 			isValid = true
 			return isValid
 		end
@@ -25,16 +25,16 @@ end
 ---setFaction
 ---@param source number
 ---@param faction string
----@param rank number
+---@param grade number
 ---@param cb function
 ---@return void
 ---@public
-function setFaction(source, faction, rank, cb)
+function setFaction(source, faction, grade, cb)
 	if not source then
 		cb(false)
 		return
 	end
-	if not doesFactionExist(faction, rank) then
+	if not doesFactionExist(faction, grade) then
 		log(GetPlayerName(source) .. " tried to set a faction that doesn't exist")
 		cb(false)
 		return
@@ -46,9 +46,9 @@ function setFaction(source, faction, rank, cb)
 	end
 	xPlayer.setMeta("faction", {
 		name = faction,
-		grade = rank,
+		grade = grade,
 		label = Config.factions[faction].label,
-		grade_label = Config.factions[faction].ranks[rank],
+		grade_label = Config.factions[faction].grades[grade],
 	})
 	cb(true)
 end

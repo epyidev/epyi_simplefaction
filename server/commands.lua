@@ -2,8 +2,8 @@ ESX.RegisterCommand(
 	{ "setfaction", "setjob2", "setgang", "setorga" },
 	Config.admins,
 	function(xPlayer, args, _)
-		setFaction(args.player.source, args.faction, args.rank, function(success)
-			xPlayer.showNotification(success and _U("notif_setfaction_success", GetPlayerName(args.player.source), args.faction, args.rank) or _U("notif_setfaction_error", GetPlayerName(args.player.source)))
+		setFaction(args.player.source, args.faction, args.grade, function(success)
+			xPlayer.showNotification(success and _U("notif_setfaction_success", GetPlayerName(args.player.source), args.faction, args.grade) or _U("notif_setfaction_error", GetPlayerName(args.player.source)))
 		end)
 	end,
 	true,
@@ -12,7 +12,7 @@ ESX.RegisterCommand(
 		arguments = {
 			{ name = "player", help = _U("command_setfaction_args_player"), type = "player" },
 			{ name = "faction", help = _U("command_setfaction_args_faction"), type = "string" },
-			{ name = "rank", help = _U("command_setfaction_args_rank"), type = "number" },
+			{ name = "grade", help = _U("command_setfaction_args_grade"), type = "number" },
 		},
 	}
 )
