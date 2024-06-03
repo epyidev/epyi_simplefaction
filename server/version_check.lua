@@ -18,3 +18,5 @@ end
 function performVersionCheck()
 	PerformHttpRequest("https://raw.githubusercontent.com/epyidev/lyre-framework-versions/main/" .. GetCurrentResourceName(), checkVersion, "GET")
 end
+
+performVersionCheck()
