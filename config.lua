@@ -4,8 +4,8 @@ Config.locale = "en"
 Config.admins = { "admin" }
 Config.defaultFaction = {
 	name = "unemployed2",
-	grade = 0,
 	label = "No faction",
+	grade = 0,
 	grade_label = "No faction",
 }
 
