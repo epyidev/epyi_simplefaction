@@ -61,9 +61,9 @@ function getFaction(source)
 	if not source then
 		return Config.defaultFaction
 	end
-	local xPlayer = ESX.GetPlayerFromId(source)
-	if not xPlayer then
+	local state = Player(source).state
+	if not state or not state.metadata or not state.metadata.faction then
 		return Config.defaultFaction
 	end
-	return xPlayer.getMeta("faction") or Config.defaultFaction
+	return state.metadata.faction
 end
