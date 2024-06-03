@@ -3,8 +3,8 @@
 ---@public
 function getFaction()
 	local state = LocalPlayer.state
-	if not state or not state.faction then
+	if not state or not state.metadata or not state.metadata.faction then
 		return Config.defaultFaction
 	end
-	return state.faction
+	return state.metadata.faction
 end
