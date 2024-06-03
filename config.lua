@@ -3,7 +3,7 @@ Config.locale = "en"
 
 Config.admins = { "admin" }
 Config.defaultFaction = {
-	name = "unemployed2",
+	name = "nofaction",
 	label = "No faction",
 	grade = 0,
 	grade_label = "No faction",
