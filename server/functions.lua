@@ -46,7 +46,7 @@ function setFaction(source, faction, rank, cb)
 	end
 	xPlayer.setMeta("faction", {
 		name = faction,
-		rank = rank,
+		grade = rank,
 		label = Config.factions[faction].label,
 		grade_label = Config.factions[faction].ranks[rank],
 	})
