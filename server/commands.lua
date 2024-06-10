@@ -10,9 +10,27 @@ ESX.RegisterCommand(
 	{
 		help = _U("command_setfaction_help"),
 		arguments = {
-			{ name = "player", help = _U("command_setfaction_args_player"), type = "player" },
+			{ name = "player", help = _U("command_args_player"), type = "player" },
 			{ name = "faction", help = _U("command_setfaction_args_faction"), type = "string" },
 			{ name = "grade", help = _U("command_setfaction_args_grade"), type = "number" },
+		},
+	}
+)
+
+ESX.RegisterCommand(
+	{ "getfaction", "getjob2", "getgang", "getorga" },
+	Config.admins,
+	function(xPlayer, args, _)
+		local faction = getFaction(args.player.source)
+		TriggerClientEvent("chat:addMessage", xPlayer.source, {
+			args = { string.upper(GetCurrentResourceName()), _U("chat_getfaction", faction.label, faction.grade_label) },
+		})
+	end,
+	true,
+	{
+		help = _U("command_setfaction_help"),
+		arguments = {
+			{ name = "player", help = _U("command_args_player"), type = "player" },
 		},
 	}
 )

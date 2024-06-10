@@ -1,6 +1,8 @@
 Config = {}
 Config.locale = "en"
 
+Config.checkForUpdates = true
+
 Config.admins = { "admin" }
 Config.defaultFaction = {
 	name = "nofaction",

@@ -44,12 +44,14 @@ function setFaction(source, faction, grade, cb)
 		cb(false)
 		return
 	end
-	xPlayer.setMeta("faction", {
+	local _faction = {
 		name = faction,
 		grade = grade,
 		label = Config.factions[faction].label,
 		grade_label = Config.factions[faction].grades[grade],
-	})
+	}
+	xPlayer.setMeta("faction", _faction)
+	TriggerEvent("epyi_simplefaction:setFaction", source, _faction)
 	cb(true)
 end
 
