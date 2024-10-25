@@ -19,9 +19,6 @@ function doesFactionExist(faction, grade)
 			return isValid
 		end
 	end
-	if faction == Config.defaultFaction.name and grade == Config.defaultFaction.grade then
-		isValid = true
-	end
 	return isValid
 end
 
@@ -37,7 +34,11 @@ function setFaction(source, faction, grade, cb)
 		cb(false)
 		return
 	end
-	if not doesFactionExist(faction, grade) then
+	local isDefault = false
+	if faction == Config.defaultFaction.name and grade == Config.defaultFaction.grade then
+		isDefault = true
+	end
+	if not isDefault and not doesFactionExist(faction, grade) then
 		log(GetPlayerName(source) .. " tried to set a faction that doesn't exist")
 		cb(false)
 		return
@@ -50,8 +51,8 @@ function setFaction(source, faction, grade, cb)
 	local _faction = {
 		name = faction,
 		grade = grade,
-		label = Config.factions[faction].label,
-		grade_label = Config.factions[faction].grades[grade],
+		label = isDefault and Config.defaultFaction.label or Config.factions[faction].label,
+		grade_label = isDefault and Config.defaultFaction.grade_label or Config.factions[faction].grades[grade],
 	}
 	xPlayer.setMeta("faction", _faction)
 	TriggerEvent("epyi_simplefaction:setFaction", source, _faction)
