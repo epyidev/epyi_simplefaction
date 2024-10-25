@@ -19,6 +19,9 @@ function doesFactionExist(faction, grade)
 			return isValid
 		end
 	end
+	if faction == Config.defaultFaction.name and grade == Config.defaultFaction.grade then
+		isValid = true
+	end
 	return isValid
 end
 

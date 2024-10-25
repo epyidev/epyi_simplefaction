@@ -3,7 +3,7 @@ game("gta5")
 
 description("Simple faction system for ESX")
 author("Epyi")
-version("1.0.2")
+version("1.0.3")
 lua54("yes")
 
 shared_scripts({
